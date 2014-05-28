@@ -24,13 +24,11 @@ use warnings;
 
 sub basics() {
     s/\@copyright{}/&copy;/g;
-    s/\@dots{}/.../g;
+    s/\@dots{}/... /g;
     s/La\@TeX{}/LaTeX/g;
     s/\@var{(.*?)}/<$1>/g;
     s/\@samp{(.*?)}/'$1'/g;
-    s/\@(?:code|command){(.*?)}/<code>$1<\/code>/g;
-    s/\@file{(.*?)}/&lsquo;<tt>$1<\/tt>&rsquo;/g;
-    s/\@option{(.*?)}/&lsquo;<code>$1<\/code>&rsquo;/g;
+    s/\@(?:code|command|file|option){(.*?)}/`$1`/g;
     s/\@(?:emph|dfn){(.*?)}/_$1_/g;
     s/\@\././g;
     s/\@:/:/g;
