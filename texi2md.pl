@@ -38,6 +38,8 @@ sub basics() {
 	s/''/&rdquo;/g;
     } else {
 	s/\@(?:url|uref){(.*?)}/<$1>/g;
+	s/``/"/g;
+	s/''/"/g;
     }
     s/\@(center|display|group|page)\b//g;
     s/\@end (display|group)\b//g;
